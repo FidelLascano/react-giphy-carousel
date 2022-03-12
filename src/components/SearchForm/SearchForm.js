@@ -15,12 +15,11 @@ export const SearchForm = ({text, changeText, fFindCateg}) => {
     }
 
   return (
-    <>
+    <div className='form-container'>
         <form className='form' onSubmit={fnSubmitSendHandler}>
             <input type={"text"} value={text}  onChange={fnKeyPressHandler}/>
             <button className='btn btn-primary'>Buscar</button>
         </form>
-        <br/>
-    </>
+    </div>
   )
 }
