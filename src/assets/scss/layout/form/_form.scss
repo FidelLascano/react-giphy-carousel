@@ -1,0 +1,13 @@
+@import url('./buttons/_buttons.scss');
+.form-container
+{
+    position: relative;
+    width: 100vw;
+    padding-top: 1rem;
+    &.form
+    {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+    }
+}
