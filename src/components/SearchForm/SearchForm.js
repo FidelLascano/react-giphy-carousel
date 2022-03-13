@@ -17,8 +17,8 @@ export const SearchForm = ({text, changeText, fFindCateg}) => {
   return (
     <div className='form-container'>
         <form className='form' onSubmit={fnSubmitSendHandler}>
-            <input type={"text"} value={text}  onChange={fnKeyPressHandler}/>
-            <button className='btn btn-primary'>Buscar</button>
+            <input className='form-item itext' type={"text"} value={text}  onChange={fnKeyPressHandler} placeholder="Write an anime name"/>
+            <button className='form-item btn btn-primary'>Buscar</button>
         </form>
     </div>
   )

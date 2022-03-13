@@ -9,8 +9,11 @@ export const ShowCategories = ({categ}) => {
   return (
       <>
         <h1 className="categ-title">{categ}</h1>
-        <div className="coruosel-container">
-          <ShowImage img = {defaultImg} type="large" fnSelect={setDefaultImg}/>
+        <div className="caruosel-container">
+          <div className='large-img-conatine card'>
+            <ShowImage img = {defaultImg} type="large" fnSelect={setDefaultImg}/>
+            <p className='card-id'>{defaultImg.id}</p>
+          </div>
           <div className='short-images-container'>
           {
             loaded && gifData.map((img)=>(

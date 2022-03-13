@@ -1,1 +1,182 @@
-@import url('./layout/_layout.scss');
+@import url('https://fonts.googleapis.com/css2?family=Hubballi&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+$Hubballi: 'Hubballi', cursive;
+$Roboto: 'Roboto', sans-serif;
+$fontSize: 10px;
+$min-size:240px;
+$second-size:320px;
+$third-size:480px;
+$middle-size:600px;
+$large-size:768px;
+$xlarge-size:900px;
+$max-size:1200px;
+
+/* SCSS HSL */
+$black: hsla(0, 0%, 0%, 1);
+$oxford-blue: hsla(221, 51%, 16%, 1);
+$orange-web: hsla(37, 98%, 53%, 1);
+$platinum: hsla(0, 0%, 90%, 1);
+$white: hsla(0, 0%, 100%, 1);
+
+
+*, *::after, *::before
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: $Roboto;
+    font-size: 10px;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-family: $Hubballi;
+}
+
+h1{font-size:6*$fontSize;}
+h2{font-size:5.5*$fontSize;}
+h3{font-size:5*$fontSize;}
+h4{font-size:4.5*$fontSize;}
+h5{font-size:4*$fontSize;}
+h6{font-size:3.5*$fontSize;}
+
+
+#root
+{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: $black;
+    color: $platinum;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+
+.form-container
+{
+    position:relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > .form
+    {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding:  1rem 1rem 3rem 1rem;
+        width: 100%;
+        background-color: darken($platinum, 75%);
+        @media screen and (max-width:$min-size) {
+                width: 100%;
+            }
+
+            @media screen and (max-width:$second-size) {
+                width: 100%;
+            }
+
+            @media screen and (min-width:$third-size) {
+                width: $third-size;
+                max-width: $third-size;
+                top: 1rem;
+            }
+
+        & .form-item
+        {
+            position: relative;
+            left: 5%;
+            width: 90%;
+            font-weight: 400;
+            font-size: 2rem;
+            height: 3.5rem;
+            margin-top: 2rem; 
+            border: none;
+            color: $white;
+            
+            &[type="text"]{
+                padding-left: 1rem;
+                background-color: darken($platinum, 50%);
+            }
+
+            &.btn{
+                background-color: $orange-web;
+            }
+        }
+
+    }
+}
+
+.caruosel-container
+{
+    position: relative;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.categ-title
+    {
+        position: relative;
+        padding: 1rem 0;
+    }
+
+.card
+{
+    position: relative;
+    max-height: 50vh;
+    overflow: hidden;
+}
+
+.img-short
+{
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.card-id
+{
+    position: absolute;
+    background-color: $oxford-blue;
+    height: 4rem;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 1rem;
+    opacity: 75%;
+}
+
+.img-large{
+    position: relative; 
+}
+
+.short-images-container{
+    margin-top:2rem;
+    margin-left:2rem;
+}
+
+.img-short{
+    padding-right: 0.5rem;
+}
+
+@media screen and (max-width:$second-size)
+{
+    .card, .short-images-container
+    {
+        width: 100%;
+
+    }
+    
+}
+
+
+@media screen and (min-width:calc($second-size+1))
+{
+    .card, .short-images-container
+    {
+        width: $second-size;
+        max-width: $second-size;
+    }
+}
