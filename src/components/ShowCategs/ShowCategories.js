@@ -3,9 +3,9 @@ import { useGiphyCategory } from '../../hooks/useGiphyCategory';
 import { ShowImage } from './ShowImage';
 
 
-export const ShowCategories = ({categ}) => {
+export const ShowCategories = ({categ, fSetLoader}) => {
   const [defaultImg, setDefaultImg] = useState({id:"", shortImage:"", largeImage:""});
-  const {loaded, gifData} = useGiphyCategory(categ, setDefaultImg);
+  const {loaded, gifData} = useGiphyCategory(categ, setDefaultImg, fSetLoader);
   return (
       <>
         <h1 className="categ-title">{categ}</h1>

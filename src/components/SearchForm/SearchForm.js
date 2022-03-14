@@ -1,10 +1,13 @@
 import React from 'react'
 
-export const SearchForm = ({text, changeText, fFindCateg}) => {
+export const SearchForm = ({text, changeText, fFindCateg, fSetLoader}) => {
     const fnSubmitSendHandler = (e) =>
     {
       e.preventDefault();
-      if(text && text.length > 0) fFindCateg(true);
+      if(text && text.length > 0) {
+        fFindCateg(true);
+        fSetLoader('loader');
+      }
     };
 
     const fnKeyPressHandler = (e) => 
@@ -12,6 +15,7 @@ export const SearchForm = ({text, changeText, fFindCateg}) => {
        let targetValue = e.target.value;
        changeText(targetValue);
        fFindCateg(false);
+       fSetLoader('no-loader');
     }
 
   return (
